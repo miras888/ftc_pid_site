@@ -6,15 +6,18 @@
 
 {% block main %}
     <style>
-      .models {
-        margin-left: 50px;
-        margin-right: 50px;
-      }
-      .row {
-        margin: 80px;
-      }
       body {
         background-color: black;
+      }
+      .row {
+        margin-left: 60px;
+        margin-right: 60px;
+        margin-top: 30px;
+      }
+      @media screen and (max-width: 450px) {
+        .models, .row, .card{
+          margin: 0px;
+        }
       }
       .col-sm-6.mb-3.mb-sm-0 {
         margin-bottom: 20px;
@@ -47,6 +50,7 @@
         margin: 4px 2px;
         cursor: pointer;
         transition: background-color 0.3s;
+        border-radius: 50px;
       }
       
       .btn.btn-primary:hover {
