@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Lesson 1 of CAD course
+{% endblock %}
+{% block main %}
+    <style>
+        video {
+            width: fit-content;
+        }
+    </style>
+    {% for cad in lesson1cad %}
+        <h1>{{cad.name}}</h1>
+        <video height="720" controls>
+            <source src="{{cad.link}}" type="video/mp4">
+            <source src="/static/lesson1ofcad.ogg" type="video/ogg">
+          Your browser does not support the video tag.
+          </video>
+    {% endfor %} 
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Portfolio
+{% endblock %}
+
+{% block main %}
+    <style>
+        body {
+            background-color: black;
+            font-family: "Bruno Ace";
+        }
+        h1 {
+            color: white;
+        }
+        .photo {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            object-position: top;
+        }
+    </style>
+    <img src="/static/portfolio.png" class="photo" width="50%">
+    
+
+{% endblock %}

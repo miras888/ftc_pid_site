@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    About FTC
+{% endblock %}
+
+{% block main %}
+    <style>
+        h1 {
+            font-family: "Bruno Ace";
+            color: white;
+            margin-bottom: 20px;
+        }
+        h5 {
+          margin-bottom: 50px;
+          color: white;
+        }
+        body {
+            background-color: rgb(0, 0, 0);  
+            font-family: "Bruno Ace"; 
+      }
+      .btn-primary {
+        margin-bottom: 20px;
+      }
+    </style>
+    <h1>About FTC</h1>
+    <h5>FIRST® Tech Challenge is a student-centered program aimed at providing students with a unique and engaging experience. Each year, teams participate in a new game where they design, build, test, and program robots to perform various tasks autonomously and under operator control. Participants and alumni of the FIRST program gain access to educational and career opportunities, connections to exclusive scholarships and employers, and become part of the FIRST community for life.</h5>
+    <a href="/static/control-award-instructions.pdf" download class="btn btn-primary">Download a control award instructions</a>
+    <br><a href="/static/game-manual-part-1-traditional.pdf" download class="btn btn-primary">Download a game manual 1 traditional</a>
+    <br><a href="/static/game-manual-part-1-remote.pdf" download class="btn btn-primary">Download a game manual 1 remote</a>
+    <br><a href="/static/game-manual-part-2-traditional.pdf" download class="btn btn-primary">Download a game manual 2 traditional</a>
+    <br><a href="/static/game-manual-part-2-remote.pdf" download class="btn btn-primary">Download a game manual 2 remote</a>
+    <br><a href="/static/game-manual-part-1-remote.pdf" download class="btn btn-primary">Download a game manual remote</a>
+    <br><a href="/static/control-award-submission-form-remote.pdf" download class="btn btn-primary">Download a control award submission form remote</a>
+    <br><a href="/static/control-award-submission-form-traditional.pdf" download class="btn btn-primary">Download a control award submission form traditional</a>
+
+{% endblock %}

@@ -1,0 +1,203 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+    <style>
+    body {
+          background-color: rgb(0, 0, 0);  
+          font-family: "Bruno Ace"; 
+    }
+
+    .index {
+      margin-left: 80px;
+      margin-right: 80px;
+    }
+
+    @keyframes gradientAnimation {
+      0% {
+        background: linear-gradient(45deg, black, rgb(112, 0, 95));
+      }
+      50% {
+        background: linear-gradient(45deg, rgb(112, 0, 95), black);
+      }
+      100% {
+        background: linear-gradient(45deg, black, rgb(112, 0, 95));
+      }
+    }
+    .welcome-img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      object-position: center;
+    }
+    @media screen and (max-width: 780px) {
+      .index {
+        margin: 0 25px;
+      }
+    }
+    @media screen and (max-width: 400px) {
+      .index {
+        margin: 0;
+      }
+    }
+        h1, h2, h4 {
+            font-family: "Bruno Ace";
+            color: white;
+        }
+        h4 {
+          margin-bottom: 80px;
+        }
+        
+        * {box-sizing:border-box}
+    </style>
+    <div class="index">
+    <img src="/static/website.png" width="100%" height="auto" class="welcome-img">
+    <br>
+    <br>
+    <br>
+    <h1>WHO ARE WE?</h1>
+    <h4>The PID Team is a group of young engineers hailing from Almaty, Kazakhstan. With 12 members on board, we've united our efforts to bring innovative projects to life. Last season, three of our high school seniors competed as part of the QStem team in the FTC category, while four younger students engaged in the FLL category. This year, we merged forces to establish the PID team, where we combine our expertise and passion for technical challenges. Our collective is a space where experience meets ambition, where high schoolers and younger students collaborate on new challenges and ideas, striving for technological innovation and creative growth.</h4>
+    <br>
+    <style>
+      #slider-container {
+        width: 80%;
+        margin: auto;
+        overflow: hidden;
+        position: relative;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+      }
+  
+      #slider {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+      }
+  
+      .slide {
+        flex: 0 0 100%;
+        box-sizing: border-box;
+        overflow: hidden;
+        border-radius: 8px;
+      }
+  
+      .slide img {
+        width: 100%;
+        height: 750px;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 70px;
+        margin-bottom: 80px;
+      }
+
+      @media screen and (max-width: 1100px) {
+        .slide img {
+          height: 500px;
+        }
+      }
+
+      @media screen and (max-width: 800px) {
+        .slide img {
+          height: 300px;
+        }
+      }
+  
+      .slider-btn {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-100%);
+        font-size: 24px;
+        color: #fff;
+        background-color: #333;
+        border: none;
+        padding: 10px;
+        outline: none;
+        transition: background-color 0.3s;
+        border-radius: 50%;
+      }
+  
+      .slider-btn:hover {
+        background-color: #555;
+      }
+  
+      #prev-btn {
+        left: 10px;
+      }
+  
+      #next-btn {
+        right: 10px;
+      }
+
+      .col-sm-6 {
+        margin-bottom: 50px;
+      }
+    </style>
+  
+  <div id="slider-container">
+    <div id="slider">
+      <div class="slide"><img src="/static/msg1569996250-5730.jpg" alt="Image 1"></div>
+      <div class="slide"><img src="/static/photo1706195536.jpeg" alt="Image 2"></div>
+      <div class="slide"><img src="/static/photo1706195544.jpeg" alt="Image 3"></div>
+      <!-- Add more slides as needed -->
+    </div>
+    <button id="prev-btn" class="slider-btn" onclick="prevSlide()">❮</button>
+    <button id="next-btn" class="slider-btn" onclick="nextSlide()">❯</button>
+  </div>
+  
+  <script>
+    let currentIndex = 0;
+    const slides = document.querySelectorAll('.slide');
+    const totalSlides = slides.length;
+  
+    function showSlide(index) {
+      const newTransformValue = -index * 100 + '%';
+      document.getElementById('slider').style.transform = 'translateX(' + newTransformValue + ')';
+    }
+  
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % totalSlides;
+      showSlide(currentIndex);
+    }
+  
+    function prevSlide() {
+      currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+      showSlide(currentIndex);
+    }
+  </script>
+        <div class="row">
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-body">
+              <img src="/static/Frame 5.png" class="card-img-top" alt="...">
+              <h5 class="card-title">Our 3D models</h5>
+              <p class="card-text">If you want to see our 3D models, feel free to download our models.</p>
+              <a href="/3dmodels" class="btn btn-primary">Go to 3D models page</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-body">
+              <img src="/static/Frame 6.png" class="card-img-top" alt="...">
+              <h5 class="card-title">Our achivements</h5>
+              <p class="card-text">Here you can see our achievments and awards, that we gain through working path!</p>
+              <a href="/portfolio" class="btn btn-primary">Go to portfolio page</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-body">
+              <img src="/static/Frame 11.png" class="card-img-top" alt="...">
+              <h5 class="card-title">Courses</h5>
+              <p class="card-text">Here you can sign up for our courses</p>
+              <a href="/courses" class="btn btn-primary">Go to courses page</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+{% endblock %}
